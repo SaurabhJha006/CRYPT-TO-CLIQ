@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block title %} Click {% endblock %}{% block stylesheet %}
+<link href="/static/css/play.css" rel="stylesheet" type="text/css" /> {% endblock %} {% block body %}
+
+<div class="page-hero-section wf-section">
+
+    <div class="container-7 w-container">
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %} {% if category == 'level-num'%}
+        <h2 class="heading-5">{{ message }}</h2>
+        {%endif%} {%endfor%} {%endif%} {%endwith%}
+    </div>
+    <div class="container-7 w-container">
+
+    </div>
+
+    {% for level in levels %}
+    <div class="submit-box">
+        <center>
+            <a href="/submit_click{{ level }}" class="usernames">Level {{ level }} <br><br>
+                {% if image_list[level] == 'none' %}
+                <h3> Upload Image</h3>
+                {% else %}
+                <img src="{{ url_for('file', filename=image_list[level]) }}" style="max-width: 200px; max-height: 200px;">
+                {% endif %}
+            </a>
+        </center>
+    </div>
+    {% endfor %}
+</div>
+<br><br><br><br> {% endblock %}

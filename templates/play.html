@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block title %} Play {% endblock %} {% block stylesheet %}
+<link href="/static/css/play.css" rel="stylesheet" type="text/css" /> {% endblock %} {% block body %}
+
+<div class="page-hero-section wf-section">
+    <div class="columns-4 w-row">
+        <div class="column-9 w-col w-col-4">
+
+        </div>
+        <div class="column-7 w-col w-col-4">
+            <div class="container-7 w-container">
+                {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %} {% if category == 'level-num'%}
+                <h2 class="heading-5">{{ message }}</h2>
+                {%endif%} {%endfor%} {%endif%} {%endwith%}
+            </div>
+            <div class="container-8 w-container">
+                {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %} {% if category == 'level-content'%}
+                <div class="text-block-6">{{ message }} </div>
+                {%endif%} {%endfor%} {%endif%} {%endwith%}
+
+                <div class="div-block">
+                    {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %} {% if category == 'level-image'%} {%if message != ''%}
+                    <img src="{{ message }}" loading="lazy" width="188" sizes="188px" alt="" class="image-7" /> {%endif%} {%if message == ''%} {%endif%} {%endif%} {%endfor%} {%endif%} {%endwith%}
+                </div>
+
+                <div class="div-block-2">
+                    <!--{{ source_hint }}-->
+                    <div class="w-form">
+                        <form action="/play/validate" method="POST" id="wf-form-Answer-Form" name="wf-form-Answer-Form" data-name="Answer Form" class="form">
+                            <input type="text" class="text-field w-input" maxlength="256" name="response" data-name="response" placeholder="answer" id="response" required="" autocomplete="off" />
+                            <input type="submit" value="Submit" data-wait="Please wait..." class="submit-button w-button" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column-8 w-col w-col-4">
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

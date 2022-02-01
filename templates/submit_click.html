@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block title %} Click {% endblock %}{% block stylesheet %}
+<link href="/static/css/play.css" rel="stylesheet" type="text/css" /> {% endblock %} {% block body %}
+
+<div class="page-hero-section wf-section">
+    <div class="columns-4 w-row">
+        <div class="column-9 w-col w-col-4">
+
+        </div>
+        <div class="column-7 w-col w-col-4">
+            <div class="container-7 w-container">
+                <h2 class="heading-5">Level {{ level }}</h2>
+            </div>
+            <div class="container-8 w-container">
+                {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %} {% if category == 'level-content'%}
+                <div class="text-block-6">{{ message }} </div>
+                {%endif%} {%endfor%} {%endif%} {%endwith%}
+
+                <div class="div-block">
+                    {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %} {% if category == 'level-image'%} {%if message != ''%}
+                    <img src="{{ message }}" loading="lazy" width="188" sizes="188px" alt="" class="image-7" /> {%endif%} {%if message == ''%} {%endif%} {%endif%} {%endfor%} {%endif%} {%endwith%}
+                </div>
+
+                <div class="text-black-6"> Your answer: {{ user_answer }} </div>
+
+                <div class="div-block-2">
+                    <div class="w-form">
+                        <form action="/submit_click{{ level }}/accept" method="POST" enctype="multipart/form-data">
+                            <input type="file" name="click_image" required />
+                            <input type="submit" value="Submit" data-wait="Please wait..." class="submit-button w-button" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column-8 w-col w-col-4">
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

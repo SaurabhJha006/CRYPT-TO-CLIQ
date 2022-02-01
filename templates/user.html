@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block stylesheet %}
+<link href="/static/css/play.css" rel="stylesheet" type="text/css" /> {% endblock %} {% block body %}
+
+
+<div class="page-hero-section wf-section">
+    <div class="columns-4 w-row">
+        <div class="column-9 w-col w-col-4">
+
+        </div>
+        <div class="column-7 w-col w-col-4">
+            <div class="container-7 w-container">
+                <h2 class="heading-5">{{ data['username'] }}</h2>
+            </div>
+            <div class="container-8 w-container">
+                <div class="text-block-6">{{ details|safe }} </div>
+                <style>
+                    .text-block-6 {
+                        text-align: left;
+                        line-height: 25px;
+                    }
+                </style>
+                <form action="/u/edit" id="wf-form-Answer-Form" name="wf-form-Answer-Form" data-name="Answer Form" class="form">
+                    <input type="submit" value="EDIT PROFILE" data-wait="Please wait..." class="submit-button w-button" />
+                </form>
+                {% if admin %} {% if not dq_check %}
+                <form action="/u/{{ user }}/dq" id="wf-form-Answer-Form" name="wf-form-Answer-Form" data-name="Answer Form" class="form">
+                    <input type="submit" value="Disqualify" data-wait="Please wait..." class="submit-button w-button" />
+                </form>
+                {% endif %} {% if dq_check %}
+                <form action="/u/{{ user }}/rq" id="wf-form-Answer-Form" name="wf-form-Answer-Form" data-name="Answer Form" class="form">
+                    <input type="submit" value="Requalify" data-wait="Please wait..." class="submit-button w-button" />
+                </form>
+                {% endif %}
+                <form action="/u/{{ user }}/modifyrole" id="wf-form-Answer-Form" name="wf-form-Answer-Form" data-name="Answer Form" class="form">
+                    <input type="submit" value="Change Role" data-wait="Please wait..." class="submit-button w-button" />
+                </form>
+                {% endif %}
+            </div>
+
+        </div>
+        <div class="column-8 w-col w-col-4">
+            {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+            <h4 class="{{ category }}">{{ message }}</h4>
+            {% endfor %} {% endif %} {% endwith %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

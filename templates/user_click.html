@@ -1,0 +1,8 @@
+{% for level in images %}
+
+<h1>{{ loop.index }}</h1>
+{% for image in level %}
+<img src="/file/{{ image }}">
+{% endfor %}
+
+{% endfor %}

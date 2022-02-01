@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block title %} Home{% endblock %} {% block stylesheet %}
+<link href="/static/css/index.css" rel="stylesheet" type="text/css" /> {% endblock %} {% block body %}
+<div class="page-hero-section wf-section">
+    <div class="hero-info-wrap">
+        <h1 class="large-page-heading outline">Matrix Mindcraft</h1>
+        {%if not login%}
+    </div>
+
+    <a href="{{url}}" class="button w-button spbutton">LOGIN WITH DISCORD</a> {%endif%} {%if login%}
+</div><a href="/play" class="button w-button spbutton">PLAY NOW</a> {%endif%}
+</div>
+</div>
+
+{% endblock %}
