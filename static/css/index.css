@@ -53,7 +53,7 @@ template {
 }
 
 a {
-    background-color: transparent
+    background-color: transparent;
 }
 
 a:active,
@@ -334,7 +334,7 @@ html.w-mod-touch * {
     display: inline-block;
     font-size: larger;
     padding: 15px 29px;
-    background-color: #009726;
+    background-color: #6600ff;
     color: white;
     border: 0;
     line-height: inherit;
@@ -2244,9 +2244,9 @@ textarea.w-select {
 body {
     background-image: url("../images/bg.png");
     background-repeat: repeat;
-    background-color: #111;
+    background-color: #fff;
     font-family: "Exo";
-    color: #f1f1f1;
+    color: #333;
     font-size: 1rem;
     line-height: 1;
     font-weight: 400;
@@ -2285,7 +2285,7 @@ body {
     flex: 0 0 auto;
     -webkit-transition: all 200ms ease;
     transition: all 200ms ease;
-    color: #f8f8f8;
+    color: #333;
     font-size: 0.8rem;
     font-weight: 500;
     text-decoration: none;
@@ -2305,14 +2305,14 @@ body {
     outline: 0;
     border-radius: 5px;
     box-shadow: 0px 10px 10px black;
-    background-color: white;
-    color: #3898EC;
+    background-color: #4e00c4;
+    color: #fff;
     transition-timing-function: ease;
     transition-duration: 0.5s;
 }
 
 .icon-button-text:hover {
-    color: #009726;
+    color: #6600ff;
 }
 
 .page-nav-header {
@@ -2340,7 +2340,7 @@ body {
     -ms-flex-align: center;
     align-items: center;
     border-bottom: 1px solid #313131;
-    background-color: #000;
+    background-color: #f8f8f8;
 }
 
 .button-icon-outline {
@@ -2377,7 +2377,7 @@ body {
 .simple-nav-header {
     margin-top: 0px;
     margin-bottom: 0px;
-    color: #f8f8f8;
+    color: #333;
     font-size: 1rem;
     line-height: 1;
     font-weight: 400;
@@ -2466,6 +2466,7 @@ body {
     line-height: 0.9;
     font-weight: 900;
     text-align: center;
+    background-color: blue;
 }
 
 .large-page-heading.outline {
@@ -2611,7 +2612,7 @@ body {
 .heading-2 {
     margin-top: 0px;
     margin-bottom: 1.3rem;
-    color: #fff;
+    color: #333;
     font-size: 70px;
     font-weight: 800;
 }
@@ -2746,7 +2747,8 @@ body {
 
 .section-3 {
     height: 50px;
-    background-color: #000;
+    background-color: #f8f8f8;
+    border-top: 1px solid #313131;
 }
 
 .text-block {
@@ -3217,7 +3219,7 @@ body {
 
 .alert-correct-ans {
     padding: 25px 0px;
-    background-color: #04AA6D;
+    background-color: #6600ff;
     color: white;
     position: absolute;
     display: grid;
@@ -3229,7 +3231,7 @@ body {
 
 .alert-message {
     text-align: center;
-    padding-top: 14px;
+    padding-top: 70px;
 }
 
 .alert-incorrect-ans {
