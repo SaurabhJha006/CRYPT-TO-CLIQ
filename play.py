@@ -10,7 +10,7 @@ UTC = pytz.utc
 IST = pytz.timezone('Asia/Kolkata')
 
 client = MongoClient(DATABASE_URL)
-db = client.mindcraft
+db = client.Shutterfest
 user_collection = db['users']
 leaderboard = db['leaderboard']
 questions = db['questions']

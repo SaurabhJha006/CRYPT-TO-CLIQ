@@ -3,7 +3,7 @@ from pymongo import MongoClient
 from config import DATABASE_URL
 
 client = MongoClient(DATABASE_URL)
-db = client.mindcraft
+db = client.Shutterfest
 user_collection = db['users']
 question_collection = db['questions']
 

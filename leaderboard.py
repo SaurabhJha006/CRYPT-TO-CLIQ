@@ -3,7 +3,7 @@ from datetime import datetime
 from config import DATABASE_URL
 
 client = MongoClient(DATABASE_URL)
-db = client.mindcraft
+db = client.Shutterfest
 leaderboard = db["leaderboard"]
 users = db['users']
 

@@ -17,7 +17,7 @@ import logging
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ok'
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+app.config['MAX_CONTENT_LENGTH'] = 128 * 1024 * 1024
 app.config['MONGO_URI'] = DATABASE_URL
 mongo = PyMongo(app)
 log = logging.getLogger('werkzeug')

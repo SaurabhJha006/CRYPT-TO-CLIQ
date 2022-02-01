@@ -2,7 +2,7 @@ from pymongo import MongoClient, collection
 from config import DATABASE_URL
 
 client = MongoClient(DATABASE_URL)
-db = client.mindcraft
+db = client.Shutterfest
 collection = db['checker']
 
 

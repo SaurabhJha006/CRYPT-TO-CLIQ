@@ -3,7 +3,7 @@ from flask import redirect, flash, session
 from config import DATABASE_URL
 
 client = MongoClient(DATABASE_URL)
-db = client.mindcraft
+db = client.Shutterfest
 leaderboard = db["leaderboard"]
 user_collection = db['users']
 dq_collection = db['dq-participants']
