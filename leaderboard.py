@@ -30,7 +30,7 @@ def leaderboard_sort():
     leader_main = []
 
     for element in leader_list:
-        leader_main.append({'points': element[0], 'username': element[3], '_id': element[4], 'level': element[1]})
+        leader_main.append({'points': element[0], 'username': element[3], '_id': element[4], 'level': element[1], 'name': users.find_one({'_id': element[4]})})
     for element in not_started:
-        leader_main.append({'points': element[0], 'username': element[3], '_id': element[4], 'level': element[1]})
+        leader_main.append({'points': element[0], 'username': element[3], '_id': element[4], 'level': element[1], 'name': users.find_one({'_id': element[4]})})
     return leader_main
