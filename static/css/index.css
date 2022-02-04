@@ -54,6 +54,7 @@ template {
 
 a {
     background-color: transparent;
+   color:blue;
 }
 
 a:active,
