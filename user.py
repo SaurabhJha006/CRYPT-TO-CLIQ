@@ -13,7 +13,7 @@ def user_page(user_id):
     try:
         user = user_collection.find_one({'_id': user_id})
         lb_entry = leaderboard.find_one({'_id': user_id})
-        data = {
+        data = {'$set':{
             'username': user['username'],
             'name': user['name'],
             'organization': user['organization'],
@@ -25,7 +25,7 @@ def user_page(user_id):
             'time': user['time'],
             'level': lb_entry['level'],
             'last_solved': lb_entry['last_solved'],
-        }
+        }}
         return data
     except:
         flash("No matching user found!")
