@@ -76,7 +76,12 @@ def form():
     data = request.form
     name = data['name']
     organization = data['organization']
-    return user_data_upload(name, organization)
+    p1 = data['participant1']
+    p2 = data['participant2']
+    c1 = data['class1']
+    c2 = data['class2']
+    phone = data['phone']
+    return user_data_upload(name, organization, p1, p2, c1, c2, phone)
 
 
 @app.route('/u/edit', methods=['POST', 'GET'])
