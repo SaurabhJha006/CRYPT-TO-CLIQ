@@ -3235,6 +3235,12 @@ body {
     padding-top: 70px;
 }
 
+.rules{
+    width: 60%;
+    margin: 0 auto;
+    font-size: 19px;
+}
+
 .alert-incorrect-ans {
     padding: 25px 0px;
     background-color: #ea384c;
